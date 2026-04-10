@@ -1,0 +1,9 @@
+export { HeroSection } from "./HeroSection";
+export { AboutSection } from "./AboutSection";
+export { HighlightsSection } from "./HighlightsSection";
+export { MentorsSection } from "./MentorsSection";
+export { TimelineSection } from "./TimelineSection";
+export { GallerySection } from "./GallerySection";
+export { TeamSection } from "./TeamSection";
+export { SponsorsSection } from "./SponsorsSection";
+export { ContactSection } from "./ContactSection";

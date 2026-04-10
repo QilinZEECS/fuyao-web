@@ -1,41 +1,30 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
-/.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
-
-# testing
-/coverage
-
-# next.js
-/.next/
-/out/
-
-# production
-/build
-
-# misc
-.DS_Store
-*.pem
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
-
-# env files (can opt-in for committing if needed)
-.env*
-
-# vercel
-.vercel
-
-# typescript
+node_modules/
+.next/
 *.tsbuildinfo
-next-env.d.ts
+.DS_Store
+
+# Only include used images, ignore the rest of pptx folder
+public/images/pptx/*
+!public/images/pptx/slide17_img4.jpg
+!public/images/pptx/slide17_img5.jpg
+!public/images/pptx/slide17_img6.jpg
+
+# Ignore unused gallery photos
+public/images/gallery/*
+!public/images/gallery/boxphoto7.jpg
+!public/images/gallery/boxphoto16.jpg
+!public/images/gallery/boxphoto21.jpg
+!public/images/gallery/boxphoto26.jpg
+!public/images/gallery/boxphoto38.jpg
+!public/images/gallery/boxphoto47.jpg
+!public/images/gallery/boxphoto59.jpg
+!public/images/gallery/boxphoto66.jpg
+!public/images/gallery/boxphoto87.jpg
+
+# Ignore unused assets
+public/images/placeholder-*.png
+public/images/bici_logo.png
+public/images/qbay_logo.png
+public/images/weiming_angels.jpg
+public/images/fuyao_logo_new.png
+public/images/wuda_logo.png
