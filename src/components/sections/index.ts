@@ -6,4 +6,5 @@ export { TimelineSection } from "./TimelineSection";
 export { GallerySection } from "./GallerySection";
 export { TeamSection } from "./TeamSection";
 export { SponsorsSection } from "./SponsorsSection";
+export { PartnersSection } from "./PartnersSection";
 export { ContactSection } from "./ContactSection";

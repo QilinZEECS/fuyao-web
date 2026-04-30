@@ -6,11 +6,13 @@ interface SectionHeadingProps {
 
 export function SectionHeading({ tagline, title, centered = true }: SectionHeadingProps) {
   return (
-    <div className={`mb-12 ${centered ? "text-center" : ""}`}>
-      <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-primary">
+    <div className={`mb-14 ${centered ? "text-center" : ""}`}>
+      <span className="glass-pill mb-6 px-6 py-2 text-base font-semibold uppercase tracking-[0.2em] text-primary md:text-lg">
         {tagline}
-      </p>
-      <h2 className="text-3xl font-bold text-text md:text-4xl">{title}</h2>
+      </span>
+      <h2 className="text-3xl font-bold leading-tight text-text md:text-5xl">
+        {title}
+      </h2>
     </div>
   );
 }
