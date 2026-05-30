@@ -22,27 +22,28 @@ export function Navbar() {
   const handleNavClick = () => setMobileOpen(false);
 
   return (
-    <header className="fixed top-4 left-1/2 z-50 w-[min(1080px,calc(100%-2rem))] -translate-x-1/2">
+    <header className="fixed top-4 left-1/2 z-50 w-[min(1120px,calc(100%-1.5rem))] -translate-x-1/2">
       <nav
-        className={`glass-strong glass-shine flex items-center justify-between gap-4 rounded-full px-5 py-2.5 transition-all duration-500 ${
-          scrolled ? "shadow-2xl" : ""
+        className={`glass-strong glass-shine nav-glass flex items-center justify-between gap-4 rounded-full px-4 py-2.5 transition-all duration-500 md:px-5 ${
+          scrolled ? "translate-y-1 shadow-2xl" : ""
         }`}
       >
         <motion.a
-          href="#"
+          href="/"
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.96 }}
           transition={{ type: "spring", stiffness: 380, damping: 22 }}
-          className="relative z-10 flex items-center gap-2.5"
+          className="glass-pill nav-brand-pill relative z-10 flex items-center gap-2.5 whitespace-nowrap px-3 py-1.5 text-text"
         >
           <Image
             src="/images/fuyao_logo.png"
             alt={SITE_NAME}
-            width={32}
-            height={32}
-            className="rounded-full"
+            width={30}
+            height={30}
+            className="rounded-full ring-1 ring-white/80"
+            style={{ width: 30, height: 30 }}
           />
-          <span className="text-base font-bold text-text">{SITE_NAME}</span>
+          <span className="text-sm font-bold md:text-base">{SITE_NAME}</span>
         </motion.a>
 
         {/* Desktop nav with sliding glass hover indicator */}
@@ -62,14 +63,14 @@ export function Navbar() {
                   {isHovered && (
                     <motion.span
                       layoutId="nav-hover-pill"
-                      className="absolute inset-0 rounded-full bg-white/70 shadow-[inset_0_1px_0_0_rgba(255,255,255,1),0_4px_12px_-2px_rgba(15,23,42,0.15)] backdrop-blur-md"
+                      className="nav-hover-pill absolute inset-0 rounded-full"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                       aria-hidden="true"
                     />
                   )}
                   <a
                     href={item.href}
-                    className={`relative z-10 block rounded-full px-3.5 py-1.5 text-sm font-medium transition-colors duration-300 ${
+                    className={`relative z-10 block rounded-full px-3.5 py-1.5 text-sm font-semibold transition-colors duration-300 ${
                       isHovered ? "text-primary" : "text-text/85"
                     }`}
                   >

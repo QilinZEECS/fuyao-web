@@ -1,7 +1,14 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
-import { CONTENT, type ContentShape, type Lang } from "@/lib/i18n";
+import {
+  CONTENT,
+  DEFAULT_LANG,
+  HTML_LANG,
+  LANG_COOKIE_NAME,
+  type ContentShape,
+  type Lang,
+} from "@/lib/i18n";
 
 interface LangContextValue {
   lang: Lang;
@@ -11,30 +18,25 @@ interface LangContextValue {
 
 const LangContext = createContext<LangContextValue | null>(null);
 
-const STORAGE_KEY = "fuyao-lang";
-const HTML_LANG: Record<Lang, string> = { zh: "zh-CN", tw: "zh-TW", en: "en" };
+const STORAGE_KEY = LANG_COOKIE_NAME;
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>("zh");
-
-  useEffect(() => {
-    const saved = (typeof window !== "undefined" && localStorage.getItem(STORAGE_KEY)) as Lang | null;
-    if (saved === "zh" || saved === "tw" || saved === "en") {
-      setLangState(saved);
-    } else if (typeof navigator !== "undefined") {
-      const nav = navigator.language.toLowerCase();
-      if (nav.startsWith("zh-tw") || nav.startsWith("zh-hk") || nav.startsWith("zh-mo")) {
-        setLangState("tw");
-      } else if (!nav.startsWith("zh")) {
-        setLangState("en");
-      }
-    }
-  }, []);
+export function LanguageProvider({
+  children,
+  initialLang = DEFAULT_LANG,
+}: {
+  children: ReactNode;
+  initialLang?: Lang;
+}) {
+  const [lang, setLangState] = useState<Lang>(initialLang);
 
   useEffect(() => {
     if (typeof document !== "undefined") {
       document.documentElement.lang = HTML_LANG[lang];
-      document.title = CONTENT[lang].SITE_NAME + " — " + CONTENT[lang].HERO.title;
+      document.title = `${CONTENT[lang].SITE_NAME} · ${CONTENT[lang].HERO.title}`;
+    }
+    if (typeof window !== "undefined") {
+      localStorage.setItem(STORAGE_KEY, lang);
+      document.cookie = `${LANG_COOKIE_NAME}=${lang}; path=/; max-age=31536000; samesite=lax`;
     }
   }, [lang]);
 

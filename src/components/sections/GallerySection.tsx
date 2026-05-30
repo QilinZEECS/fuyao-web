@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { ScrollReveal, SectionHeading } from "@/components/ui";
+import { motion } from "framer-motion";
+import { ScrollReveal, SectionAtmosphere, SectionHeading } from "@/components/ui";
 import { useContent } from "@/components/LanguageProvider";
 
 export function GallerySection() {
@@ -9,6 +10,7 @@ export function GallerySection() {
 
   return (
     <section id="gallery" className="relative overflow-hidden py-28 md:py-40">
+      <SectionAtmosphere variant="bay" />
       <div className="blob left-1/4 top-1/4 h-96 w-96 bg-green-200/40" />
       <div className="blob blob-2 right-0 bottom-0 h-96 w-96 bg-blue-200/45" />
 
@@ -18,7 +20,7 @@ export function GallerySection() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <p className="mx-auto mb-14 max-w-2xl text-center text-base leading-relaxed text-text-secondary">
+          <p className="mx-auto mb-16 max-w-3xl text-center text-lg leading-8 text-text-secondary md:text-xl md:leading-9">
             {GALLERY_SECTION.summary}
           </p>
         </ScrollReveal>
@@ -28,12 +30,12 @@ export function GallerySection() {
             {GALLERY_STATS.map((stat) => (
               <div
                 key={stat.label}
-                className="glass glass-shine glass-interactive rounded-2xl px-4 py-6 text-center"
+                className="glass glass-shine glass-interactive rounded-3xl px-5 py-7 text-center"
               >
-                <div className="bg-gradient-to-b from-primary to-primary-light bg-clip-text text-3xl font-bold text-transparent md:text-4xl">
+                <div className="bg-gradient-to-b from-primary to-primary-light bg-clip-text text-4xl font-bold text-transparent md:text-5xl">
                   {stat.value}
                 </div>
-                <div className="mt-1 text-xs text-text-secondary">{stat.label}</div>
+                <div className="mt-2 text-sm text-text-secondary md:text-base">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -64,14 +66,14 @@ export function GallerySection() {
                         isLeft ? "md:mr-auto md:pr-4" : "md:ml-auto md:pl-4"
                       }`}
                     >
-                      <div className="glass glass-shine glass-interactive rounded-2xl p-5">
-                        <span className="text-xs font-semibold uppercase tracking-wider text-primary">
+                      <div className="glass glass-shine glass-interactive rounded-3xl p-6">
+                        <span className="text-sm font-semibold uppercase tracking-wider text-primary">
                           {item.date}
                         </span>
-                        <h4 className="mt-1 text-base font-bold text-text md:text-lg">
+                        <h4 className="mt-2 text-lg font-bold text-text md:text-xl">
                           {item.title}
                         </h4>
-                        <p className="mt-1.5 text-sm leading-relaxed text-text-secondary">
+                        <p className="mt-2 text-base leading-7 text-text-secondary">
                           {item.description}
                         </p>
                       </div>
@@ -93,20 +95,28 @@ export function GallerySection() {
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {ACTIVITY_PHOTOS.map((photo, i) => (
             <ScrollReveal key={photo.src} delay={i * 0.06}>
-              <div className="glass glass-interactive group relative aspect-[4/3] overflow-hidden rounded-2xl p-1.5">
+              <motion.div
+                initial={{ clipPath: "inset(12% 12% 12% 12% round 1rem)", opacity: 0 }}
+                whileInView={{ clipPath: "inset(0% 0% 0% 0% round 1rem)", opacity: 1 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.7, delay: i * 0.04, ease: [0.22, 1, 0.36, 1] }}
+                className="glass group relative aspect-[4/3] overflow-hidden rounded-2xl p-1.5 transition-transform duration-500 hover:-translate-y-1"
+              >
                 <div className="relative h-full w-full overflow-hidden rounded-xl">
                   <Image
                     src={photo.src}
                     alt={photo.alt}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    sizes="(min-width: 1024px) 31vw, (min-width: 640px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                  <p className="absolute bottom-0 left-0 right-0 translate-y-full p-4 text-sm font-medium text-white transition-transform duration-500 group-hover:translate-y-0">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-white/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                  <div className="absolute inset-x-6 top-5 h-px scale-x-0 bg-gradient-to-r from-transparent via-white/80 to-transparent transition-transform duration-500 group-hover:scale-x-100" />
+                  <p className="absolute bottom-0 left-0 right-0 translate-y-full p-4 text-base font-medium text-white transition-transform duration-500 group-hover:translate-y-0">
                     {photo.alt}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             </ScrollReveal>
           ))}
         </div>

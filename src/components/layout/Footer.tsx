@@ -24,6 +24,7 @@ export function Footer() {
                 width={28}
                 height={28}
                 className="rounded-full"
+                style={{ width: 28, height: 28 }}
               />
               <h3 className="text-base font-bold">{SITE_NAME}</h3>
             </div>
