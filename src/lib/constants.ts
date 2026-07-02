@@ -338,7 +338,7 @@ export const SPONSORS: Sponsor[] = [
   },
   {
     name: "南京大学旧金山湾区校友会",
-    logo: "/images/pptx/slide17_img6_square.jpg",
+    logo: "/images/pptx/slide17_img6.jpg",
   },
   {
     name: "南开美国北加州校友会",
