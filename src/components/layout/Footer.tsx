@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Mail, MessageCircle } from "lucide-react";
+import { Mail } from "lucide-react";
 import { useContent } from "@/components/LanguageProvider";
 import { LanguageSwitcher } from "@/components/ui";
 
@@ -67,10 +67,6 @@ export function Footer() {
               <li className="flex items-center gap-2 text-sm text-white/80">
                 <Mail size={16} />
                 {CONTACT_INFO.email}
-              </li>
-              <li className="flex items-center gap-2 text-sm text-white/80">
-                <MessageCircle size={16} />
-                {CONTACT_INFO.wechat}
               </li>
             </ul>
           </div>

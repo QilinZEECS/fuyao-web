@@ -8,10 +8,6 @@ const NOT_FOUND_COPY = {
     message: "抱歉，你访问的页面不存在",
     cta: "返回首页",
   },
-  tw: {
-    message: "抱歉，你訪問的頁面不存在",
-    cta: "返回首頁",
-  },
   en: {
     message: "Sorry, the page you are looking for does not exist.",
     cta: "Back home",

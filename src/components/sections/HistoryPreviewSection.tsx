@@ -16,14 +16,6 @@ const previewCopy = {
     cta: "进入历年成果",
     signal: "三年成长记录",
   },
-  tw: {
-    tagline: "歷年成果",
-    title: "從過往現場看到扶搖如何一步步長成系統",
-    description:
-      "這裡不只是活動回顧，而是一條從 2024 驗證、2025 成型到 2026 系統升級的成長敘事。每一年留下的導師經驗、學員回饋和活動機制，都會成為下一年的基礎設施。",
-    cta: "進入歷年成果",
-    signal: "三年成長紀錄",
-  },
   en: {
     tagline: "Program History",
     title: "Past moments show how Fuyao became a repeatable system",

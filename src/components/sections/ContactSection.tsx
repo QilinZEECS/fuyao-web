@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, MessageCircle, Radio, Send, ShieldCheck } from "lucide-react";
+import { Mail, Radio, Send, ShieldCheck } from "lucide-react";
 import { ScrollReveal, SectionAtmosphere, SectionHeading } from "@/components/ui";
 import { useContent, useLang } from "@/components/LanguageProvider";
 
@@ -10,12 +10,6 @@ const contactConsoleCopy = {
     title: "选择一个入口 把你的下一步发给我们",
     body: "学员、导师、志愿者和合作伙伴都可以从这里进入扶摇网络。",
     nodes: ["学员咨询", "导师加入", "志愿协作"],
-  },
-  tw: {
-    eyebrow: "連接通道",
-    title: "選擇一個入口 把你的下一步發給我們",
-    body: "學員、導師、志工和合作夥伴都可以從這裡進入扶搖網路。",
-    nodes: ["學員諮詢", "導師加入", "志工協作"],
   },
   en: {
     eyebrow: "Connection Channel",
@@ -103,21 +97,6 @@ export function ContactSection() {
                   </span>
                 </div>
               </a>
-
-              <div className="glass glass-shine glass-interactive group flex flex-col justify-between gap-8 rounded-[1.5rem] p-7 text-left transition duration-500 hover:-translate-y-1.5 hover:bg-white/58">
-                <div className="flex items-center justify-between gap-4">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/30 to-primary/10 text-primary transition-transform duration-500 group-hover:scale-110">
-                    <MessageCircle size={26} />
-                  </div>
-                  <Radio className="text-primary/60 transition duration-500 group-hover:scale-110" size={22} />
-                </div>
-                <div>
-                  <p className="text-sm font-semibold uppercase tracking-wider text-text md:text-base">
-                    {CONTACT_SECTION.wechatLabel}
-                  </p>
-                  <span className="mt-3 block text-lg font-bold text-primary">@{CONTACT_INFO.wechat}</span>
-                </div>
-              </div>
             </div>
           </div>
         </ScrollReveal>

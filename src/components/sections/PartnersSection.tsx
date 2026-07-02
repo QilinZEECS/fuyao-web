@@ -10,11 +10,6 @@ const partnerSignals = {
     { label: "共建方向", value: "职业成长网络" },
     { label: "连接对象", value: "企业与机构" },
   ],
-  tw: [
-    { label: "合作狀態", value: "開放招募中" },
-    { label: "共建方向", value: "職涯成長網路" },
-    { label: "連接對象", value: "企業與機構" },
-  ],
   en: [
     { label: "Status", value: "Open for partners" },
     { label: "Focus", value: "Career-growth network" },

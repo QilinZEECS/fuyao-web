@@ -16,7 +16,6 @@ import "./globals.css";
 
 const OPEN_GRAPH_LOCALE: Record<Lang, string> = {
   zh: "zh_CN",
-  tw: "zh_TW",
   en: "en_US",
 };
 

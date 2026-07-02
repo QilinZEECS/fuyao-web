@@ -39,5 +39,4 @@ export interface Sponsor {
 
 export interface ContactInfo {
   email: string;
-  wechat: string;
 }
