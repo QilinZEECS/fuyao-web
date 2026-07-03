@@ -6,12 +6,18 @@ export interface NavItem {
 export interface Mentor {
   name: string;
   title: string;
-  image?: string;
+  image: string;
   type: "resident" | "flying";
 }
 
 export interface TimelineItem {
   date: string;
+  title: string;
+  description: string;
+}
+
+export interface Highlight {
+  icon: string;
   title: string;
   description: string;
 }
@@ -33,5 +39,4 @@ export interface Sponsor {
 
 export interface ContactInfo {
   email: string;
-  wechat: string;
 }
