@@ -280,6 +280,16 @@ const zh: ContentShape = {
     { role: "学员招募与联络", members: ["柳郁青", "王鹏"] },
     { role: "志愿者管理", members: ["姚俊涛", "张以明"] },
     { role: "外联与赞助", members: ["张以明", "刘晔"] },
+    {
+      role: "小组助教",
+      members: [
+        "韩伟", "刘程玉", "陈万戌", "刘一萱", "郝晨洲", "王鹏",
+        "陈懿", "陈若舒", "姚毅", "张以明", "周孟宁", "周敏",
+        "覃士娟", "周凌菲", "柳郁青", "刘晔", "郑琪霖", "贾哲韬",
+        "李聪", "周舟", "周劲光", "刘舒瑜", "阙晓燕", "肖雨薇",
+        "柳芃晖", "张谨", "熊明烨", "宋佳益",
+      ],
+    },
   ],
   SPONSORS_SECTION: { tagline: "主办方", title: "五大校友会联合发起" },
   SPONSORS: [
@@ -417,6 +427,16 @@ const en: ContentShape = {
     { role: "Mentee Recruitment", members: ["Yuqing Liu", "Peng Wang"] },
     { role: "Volunteer Coordination", members: ["Juntao Yao", "Yiming Zhang"] },
     { role: "Outreach & Sponsorship", members: ["Yiming Zhang", "Ye Liu"] },
+    {
+      role: "Group Teaching Assistants",
+      members: [
+        "Wei Han", "Chengyu Liu", "Wanxu Chen", "Yixuan Liu", "Chenzhou Hao", "Peng Wang",
+        "Yi Chen", "Ruoshu Chen", "Yi Yao", "Yiming Zhang", "Mengning Zhou", "Min Zhou",
+        "Shijuan Qin", "Lingfei Zhou", "Yuqing Liu", "Ye Liu", "Qilin Zheng", "Zhetao Jia",
+        "Cong Li", "Zhou Zhou", "Jinguang Zhou", "Shuyu Liu", "Xiaoyan Que", "Yuwei Xiao",
+        "Penghui Liu", "Jin Zhang", "Mingye Xiong", "Jiayi Song",
+      ],
+    },
   ],
   SPONSORS_SECTION: { tagline: "Co-Hosts", title: "Co-launched by Five Alumni Associations" },
   SPONSORS: [
