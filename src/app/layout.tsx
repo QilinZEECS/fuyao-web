@@ -53,7 +53,7 @@ export default async function RootLayout({
 
   return (
     <html lang={HTML_LANG[initialLang]} className={notoSansSC.variable}>
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased" suppressHydrationWarning>
         <LanguageProvider initialLang={initialLang}>
           <Navbar />
           <main>{children}</main>
